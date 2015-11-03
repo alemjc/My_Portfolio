@@ -1,0 +1,20 @@
+li,p{
+    font-family: 'Kaushan Script';
+    font-size: 15px;
+    text-indent: 12px;
+
+}
+
+h4, h5{
+    font-family: 'Francois One';
+    font-size: 20px;
+}
+
+h1 {
+    font-family: 'Francois One';
+}
+
+body {
+    background-color: #007CB2;
+}
+
