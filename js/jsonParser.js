@@ -19,7 +19,7 @@ function jsonFiller(e){
   $(this).addClass("active");
   var a = $(this).find("a");
   $.ajax({
-    url:"package.json",
+    url:"htmlJson/package.json",
     dataType:"json",
     type:"GET",
     success: function( data, textStatus, jqXHR ) {
