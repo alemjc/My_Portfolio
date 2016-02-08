@@ -11,6 +11,23 @@ function initializer(){
   $('#github').off();
   $('#github').on("click",githubHandler);
 
+  $.ajax({
+    url:"/firstTime",
+    dataType:"text",
+    type:"GET",
+    success: function(data, textStatus, jqXHR){
+      if(data === "true"){
+        alert("Thank you for coming!!");
+      }
+      else if(data === "false"){
+        alert("thank you for coming again!!");
+      }
+    },
+    error: function(){
+      console.log("error");
+    }
+  });
+
 }
 
 function jsonFiller(e){
@@ -18,15 +35,21 @@ function jsonFiller(e){
   $(this).parent().find(".active").removeClass("active");
   $(this).addClass("active");
   var a = $(this).find("a");
+
   $.ajax({
-    url:"htmlJson/package.json",
+    url:"pckg"+"/package.json",
     dataType:"json",
     type:"GET",
     success: function( data, textStatus, jqXHR ) {
+      console.log("success: "+data);
       $('#MyMainContent').empty();
       $('#MyMainContent').append(data[a.html()]);
+    },
+    error:function(){
+      console.log("error");
     }
-  })
+  });
+
 }
 
 function githubHandler(e){
