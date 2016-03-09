@@ -44,6 +44,6 @@ app.get("/firstTime",function(req,res){
   req.session.firstTime = !req.session.firstTime;
 });
 
-app.listen(PORT,function(){
-
+app.listen(PORT,function(req, res){
+  console.log("Listening to port %s", PORT);
 });
